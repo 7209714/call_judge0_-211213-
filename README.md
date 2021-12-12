@@ -11,3 +11,7 @@
 再當我去使用call api時(call Judge0 server)  
 ![image](https://user-images.githubusercontent.com/50321176/145726275-f2079f15-e900-4e3e-bf01-896e1c609564.png)  
 雖然會有失敗的機率，但至少會出現正確的  
+
+
+初步判斷問題：  
+同步與非同步  
