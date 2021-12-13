@@ -4,7 +4,7 @@ var router = express.Router();
 
 
 var back_json=""
-router.use( function (req,res, next) {
+router.use( function (req,res) {
     
     var data=req.body.data
     var cin=req.body.cin
@@ -22,7 +22,7 @@ router.use( function (req,res, next) {
 
     const options = {
         method: 'POST',
-        url: 'http://ip:2358/submissions/batch',
+        url: 'http://192.168.43.133:2358/submissions/batch',
         qs: {base64_encoded: 'true'},
         headers: {
           'content-type': 'application/json',
@@ -53,7 +53,7 @@ router.use( function (req,res, next) {
           //--------------------------------------------------GET---------------------------//
           const options_g = {
               method: 'GET',
-              url: 'http://ip:2358/submissions/batch',
+              url: 'http://192.168.43.133:2358/submissions/batch',
               qs: {
                 tokens:test,
                 base64_encoded: 'false',
@@ -94,18 +94,17 @@ router.use( function (req,res, next) {
               back_json=back
               
               console.log(back)
-              response.statusMessage = 'JSON.stringify(back)';
-              response.sendStatus=200
-             
               
-            
+              res.json(back)
+              
+         
           });
           console.log(back_json)
       });
       //res.json(back_json);
     
  
-    next();
+    
 });
   
         
